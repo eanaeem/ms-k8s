@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apollo-ui-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      component: apollo-ui
+  template:
+    metadata:
+      labels:
+        component: apollo-ui
+    spec:
+      containers:
+        - name: apollo-ui
+          image: eanaeem/com-ui
+          ports:
+            - containerPort: 3000
